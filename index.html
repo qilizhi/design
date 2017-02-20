@@ -1,0 +1,347 @@
+<html>
+<head>
+<title>首页</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- jQuery library (served from Google) -->
+
+<!-- bxSlider CSS file -->
+<link href="css/jquery.bxslider.css" rel="stylesheet" />
+<style type="text/css">
+html{
+font-size: 17px;
+}
+body {
+	transition: background 300ms ease-out;
+	background: #fff;
+}
+.conten-wraper{
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+.index {
+	transition: opacity 300ms ease-out 500ms;
+	opacity: 0;
+}
+.header {
+position: absolute;
+width:100%;
+z-index:99999;
+}
+.header ul{
+text-align: center;
+list-style-type: none;
+}
+.header li{
+margin:10px 10px;
+display: inline-block;
+font-size:1.6vw;
+
+}
+/* index css */
+#index-banner {
+	background: #fff000;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99990;
+}
+
+#site-name {
+	position: absolute;
+	width:392px;;
+	margin-left: -196px;
+	margin-top: -29px;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	transform: translate(0, -20px);
+	-ms-transform: translate(0, -20px); /* IE 9 */
+	-moz-transform: translate(0, -20px); /* Firefox */
+	-webkit-transform: translate(0, -20px); /* Safari 和 Chrome */
+	-o-transform: translate(0, -20px);
+	transition: transform 1s ease-out;
+	-moz-transition: transform 1s ease-out;
+	/* Firefox 4 */
+	-webkit-transition: transform 1s ease-out;
+	/* Safari 和 Chrome */
+	-o-transition: transform 1s ease-out; /* Opera */
+	cursor: pointer;
+}
+
+#site-name span {
+	float: left;
+}
+
+#site-name span img {
+	height: 59px;
+	width: auto;
+	
+}
+
+#site-name span {
+	display: inline-block;
+	opacity: 0;
+	margin-right: 0.3em;
+	transform: scale(1.9, 1.9);
+	-ms-transform: scale(1.9, 1.9); /* IE 9 */
+	-moz-transform: scale(1.9, 1.9); /* Firefox */
+	-webkit-transform: scale(1.9, 1.9); /* Safari 和 Chrome */
+	-o-transform: scale(1.9, 1.9);
+	transition: opacity 1s ease-out, transform 1s ease-out;
+	-moz-transition: opacity 1s ease-out, transform 1s ease-out;
+	/* Firefox 4 */
+	-webkit-transition: opacity 1s ease-out, transform 1s ease-out;
+	/* Safari 和 Chrome */
+	-o-transition: opacity 1s ease-out, transform 1s ease-out; /* Opera */
+}
+
+#site-name span:last-child {
+	margin-right: 0;
+}
+
+#site-name span.c3 {
+	margin-right: 1.6em;
+}
+
+#site-name.show {
+	transform: translate(0, 0);
+	-ms-transform: translate(0, 0); /* IE 9 */
+	-moz-transform: translate(0, 0); /* Firefox */
+	-webkit-transform: translate(0, 0); /* Safari 和 Chrome */
+	-o-transform: translate(0, 0)
+}
+
+#site-name.show span {
+	opacity: 1;
+	transform: scale(1, 1);
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+@media (max-width:769px){
+	#site-name.show {opacity:1; transform: scale(0.5,0.5); }
+	.mobile-show{display: block !important;}
+}
+@media (max-width:500px){
+	.span-pc{display: none;}
+	.span-mobile{display: block;}
+}
+/* .bxslider li img{
+
+height: 90vh;
+width: 100vw;
+}
+ */
+</style>
+
+<script src="js/jquery.min.js"></script>
+<!-- bxSlider Javascript file -->
+<script src="js/jquery.bxslider.js"></script>
+<!-- <script src="js/imagesloaded.pkgd.js"></script> -->
+ <script src="js/modernizr-custom.js"></script>
+ <!–[if lt IE 9]>
+  <script src="js/css3-mediaqueries.js"></script>
+<![endif]–>
+</head>
+
+<body>
+<div class="conten-wraper">
+	<div id="index-banner">
+		<div id="site-name">
+			<span class="c1"><img src="images/logo-1.png"></span> <span
+				class="c2"><img src="images/logo-2.png"></span> <span
+				class="c3"><img src="images/logo-3.png"></span> <span
+				class="c4"><img src="images/logo-4.png"></span> <span
+				class="c5"><img src="images/logo-5.png"></span> <span
+				class="c6"><img src="images/logo-6.png"></span> <span
+				class="c7"><img src="images/logo-7.png"></span> <span
+				class="c8"><img src="images/logo-8.png"></span>
+		</div>
+	</div>
+<div class="header">
+ <ul>
+<li>liangbrand1</li>
+<!-- <li>liangbrand2</li> -->
+
+</ul>
+</div>
+	<ul class="bxslider">
+		<li><img class="preLoad" src="images/pic1.jpg" /></li>
+		<li><img src="images/pic2.jpg" /></li>
+		<li><img src="images/pic3.jpg" /></li>
+		<li><img src="images/pic4.jpg" /></li>
+	</ul>
+	</div>
+	<script type="text/javascript">
+		$(window).bind("load", function() {
+			//加载首个案例前的动画
+			$(".bxslider").css("display", "none");
+
+			//延时2秒处理案例的初始化
+			var timeout = setTimeout(function() {
+				$(".bxslider").css("display", "");
+				$('.bxslider').bxSlider({
+					//mode : 'fade',
+					 mode: 'vertical',
+					speed : 500,
+					auto : true,
+					startText : 'start', // string - text displayed for 'start' control
+					// startImage: '',                     // string - filepath of image used for 'start' control. ex: 'images/start.jpg'
+					stopText : 'stop', // string - text displayed for 'stop' control
+					// stopImage: '',                      // string - filepath of image used for 'stop' control. ex: 'images/stop.jpg'
+					ticker : false,
+				});
+				//$("img.lazy").trigger("sporty")
+
+			}, 1000);
+		});
+
+		////////////////////////////////////
+
+		 /* $(function() {
+			var tarEnd = false, $lb = $('#index-banner'), $bb = $('.banner');
+			$('.banner').hide();
+
+			$(window).bind('resize',function(){
+			 	if($.isFunction(homeSlider.stopAuto)){
+					homeSlider.stopAuto();
+				} 
+				var winW=$('.banner').width()+18,
+					winH=$(window).height()-182,
+					_imgW=imgW=1700,
+					_imgH=imgH=796,
+					imgScale=imgW/imgH;
+				if(winW/winH>imgScale){
+					_imgW=winW;
+					_imgH=_imgW/imgScale;
+					offsetTop=(winH-_imgH)/2;
+					offsetLeft=0;
+				}else{
+					_imgH=winH;
+					_imgW=_imgH*imgScale;
+					offsetLeft=(winW-_imgW)/2;
+					offsetTop=0;
+				}
+
+				$('.banner').css({height:winH});
+				$('.bxslider a').css({
+					width: winW,
+					height: winH
+				});
+				$('.bxslider li a img').css({
+					width: _imgW,
+					height: _imgH,
+					'margin-left':offsetLeft,
+					'margin-top':offsetTop
+				});
+				 if($.isFunction(homeSlider.stopAuto)){
+					homeSlider.reloadSlider();
+					homeSlider.startAuto();
+				} 
+			}).trigger('resize');	 
+	}); */
+
+			/* $(window).bind('resize', resizeHandler);
+			
+			function resizeHandler() {
+				var $lb = $('#index-banner'), $bb = $('.banner');
+				if ($lb.length == 0 || $bb.length == 0)
+					return false;
+				if (!tarEnd) {
+					var winW = $(window).width(), winH = $(window).height();
+					$('#index-banner').css({
+						width : winW,
+						height : winH,
+						top : 0,
+						left : 0
+					});
+				} else {
+					//	var tarW=1200,
+						//	tarH=1200,
+							//tarX=0,
+							//tarY=0; 
+					var tarW = $('.bxslider li').width(), tarH = $(
+							'.bxslider li').height(), tarX = $('.bxslider li')
+							.offset().top, tarY = $('.bxslider li').offset().left;
+					$('#index-banner').css({
+						width : tarW,
+						height : tarH,
+						top : tarX,
+						left : tarY
+					});
+				}
+
+			}
+			resizeHandler(); */
+
+		
+			// console.log($homeSlider);
+			var $title = $('#site-name');
+			var typo_delay = [ 4, 8, 5, 12, 6, 12, 9, 3 ];
+			$.each($('#site-name').find('span'), function(i, el) {
+				var d = typo_delay[i];
+				console.log(Modernizr.prefixedCSS('transition-delay'));
+				$(this).css(Modernizr.prefixedCSS('transition-delay'), (d/30)*1000+'ms');
+				//$(this).css("transition-delay", (d / 30) * 1000 + 'ms');
+			});
+
+			setTimeout(function() {
+				$title.addClass('show');
+				setTimeout(function() {
+					tansBanner();
+					//$("#index-banner").css("display", "none");
+				}, 2000);
+			}, 100);
+			$('#index-banner,#site-name').click(function() {
+				//$('#btn-enter').trigger('click');
+			})
+			$('#index-banner').bind('mousewheel', function() {
+				//$('#btn-enter').trigger('click');
+			});
+
+			// 过渡到Banner
+			function tansBanner() {
+				/* if ($(window).width() < 1024) {
+					$('#btn-enter').trigger('click');
+					return;
+				} */
+				var tarW = $('.bxslider li').width(), tarH = $('.bxslider li')
+						.height(), tarX = $('.bxslider li').offset().top, tarY = $(
+						'.bxslider li').offset().left;
+				//	var tarW=700,tarH=500,tarX=50,tarY=50;
+				$("#index-banner").animate({
+					width : tarW,
+					height : tarH,
+					top : tarX,
+					left : tarY + 18
+				}, 1000, $.easing.def, function() {
+					$('.banner').addClass('show');
+					$("#index-banner").animate({
+						opacity : 0
+					}, 800, function() {
+					$('#index-banner').hide();
+
+					});
+				});
+				tarEnd = true;
+
+			}
+		
+	</script>
+</body>
+
+</html>
